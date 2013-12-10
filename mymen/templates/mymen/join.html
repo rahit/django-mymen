@@ -1,0 +1,20 @@
+{% extends "layouts/default.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+
+    {% block registration_form %}
+    <form method="post" action="{% url 'registration' %}" class="col-md-8" role="form">
+        {% crispy form %}
+        <br>
+        <br>
+
+        <input type="submit" value="Join" class="col-md-12 btn btn-info"/>
+        <input type="hidden" name="next" value="{{ next }}"/>
+    </form>
+    {% endblock %}
+
+
+{% endblock %}
